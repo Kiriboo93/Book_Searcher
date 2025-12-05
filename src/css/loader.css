@@ -1,0 +1,12 @@
+.loader-div_centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 200px;
+}
+
+.loading-icon {
+    width: 150px;
+    height: auto;
+}

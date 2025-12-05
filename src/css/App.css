@@ -1,0 +1,88 @@
+:root {
+    --main-color: #91ADC8;
+    --secondary-color: #AED6CF;
+    --background-color: #FAFDD6;
+    --important-color: #647FBC;
+    --active-color: #c7962e;
+    font-size: 10px;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-color);
+    min-height: 100vh;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 20px 50px;
+    background-color: var(--important-color);
+    color: whitesmoke;
+}
+
+nav {
+    border-top: 1px solid #15254b;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 10px 10px;
+    gap: 40px;
+    background-color: var(--important-color);
+    color: whitesmoke;
+}
+
+footer {
+    font-size: 1.5rem;
+    width: 100%;
+    height: 30px;
+    background-color: var(--important-color);
+    color: whitesmoke;
+    margin-top: auto;
+}
+
+a {
+    color: var(--important-color);
+    width: fit-content;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header a,
+nav a {
+    color: whitesmoke;
+}
+
+.nav-title-link {
+    display: flex;
+}
+
+.nav-title {
+    margin: 0 16px;
+    font-size: 3rem;
+    margin-top: -8px;
+}
+
+.footer-content {
+    display: flex;
+    height: inherit;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+h1 {
+    font-size: 4rem;
+    color: var(--important-color);
+}

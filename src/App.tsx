@@ -1,25 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import Icon from '@mdi/react';
+import { mdiBookHeart } from '@mdi/js';
+import { BrowserRouter, Link, Route, Routes } from 'react-router';
+import Genre from './pages/genre/Genre';
+import Welcome from './pages/welcome/Welcome';
+import Author from './pages/author/Author';
+import Years from './pages/years/Years';
+import { useContext } from 'react';
+import { SearchContext } from './context/SearchContext';
 
 function App() {
+  /**
+   * Context of the aplication.
+   */
+  const context = useContext(SearchContext);
+
+  /**
+   * Clears context when changin page.
+   */
+  const clearContextQuery = () => {
+    context.setBooks([]);
+    context.setQuery("");
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <main>
+      <header>
+        <a className='nav-title-link' href='/'>
+          <Icon className='nav-icon' path={mdiBookHeart} size={2} />
+          <span className='nav-title'>Book searcher</span>
+          <Icon className='nav-icon' path={mdiBookHeart} size={2} />
         </a>
       </header>
-    </div>
+      <BrowserRouter>
+        <nav>
+          <Link data-testid="genre-link" onClick={clearContextQuery} to="/genre">Search by genre</Link>
+          <Link data-testid="author-link" onClick={clearContextQuery} to="/author">Search by author</Link>
+          <Link data-testid="years-link" onClick={clearContextQuery} to="/years">Search by year</Link>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Welcome />}></Route>
+          <Route path="/genre" element={<Genre />}></Route>
+          <Route path="/author" element={<Author />}></Route>
+          <Route path="/years" element={<Years />}></Route>
+        </Routes>
+      </BrowserRouter>
+      <footer>
+        <div className='footer-content'>
+          <span>Powered by Open Library Search API</span>
+          <span>© Roberto "Kiriboo" Luquero</span>
+        </div>
+      </footer>
+    </main>
   );
 }
 

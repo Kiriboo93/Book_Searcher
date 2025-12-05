@@ -1,0 +1,15 @@
+h2 {
+    color: var(--important-color);
+    font-size: 1.8rem;
+}
+
+.welcome-div_mt {
+    margin-top: 100px;
+}
+
+.welcome-div_centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
