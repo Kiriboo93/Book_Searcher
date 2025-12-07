@@ -29,3 +29,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 · Tanstack query to fetch data.
 
 · Bootstrap as a framework for custom elements.
+
+· Git for branch management.
