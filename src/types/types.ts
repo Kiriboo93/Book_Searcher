@@ -7,7 +7,9 @@ export interface SearchContextTypes {
     query: string,
     setQuery: React.Dispatch<React.SetStateAction<string>>,
     books: Book[],
-    setBooks: React.Dispatch<React.SetStateAction<Book[]>>
+    setBooks: React.Dispatch<React.SetStateAction<Book[]>>,
+    bookKey: string,
+    setBookKey: React.Dispatch<React.SetStateAction<string>>
 }
 
 /**
@@ -24,5 +26,6 @@ export interface Book {
     author_name: string[],
     cover_i: string,
     title: string,
-    first_publish_year: number
+    first_publish_year: number,
+    key: string
 }
