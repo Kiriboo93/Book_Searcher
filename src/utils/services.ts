@@ -1,8 +1,21 @@
-/* Petición para obtener las categorías. */
+/* Petition to get books filtered by genre, author or year. */
 export async function getBooks(query: string) {
     const res = await fetch("https://openlibrary.org/search.json?" + query, {
         method: "GET",
         cache: "reload"
+    });
+
+    if (!res.ok) {
+        throw new Error("Fetch failed");
+    }
+
+    return res.json();
+}
+
+/* Petition to get book info. */
+export async function getBookInfo(query: string) {
+    const res = await fetch("https://openlibrary.org" + query + ".json", {
+        method: "GET"
     });
 
     if (!res.ok) {

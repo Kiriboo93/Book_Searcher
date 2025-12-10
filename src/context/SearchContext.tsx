@@ -9,7 +9,9 @@ const searchContextDefaultValue: SearchContextTypes = {
     books: [],
     setBooks: () => { },
     bookKey: "",
-    setBookKey: () => { }
+    setBookKey: () => { },
+    bookCover: "",
+    setBookCover: () => { }
 }
 
 /**
@@ -36,5 +38,10 @@ export const SearchContextProvider: React.FC<Props> = ({ children }) => {
      */
     const [bookKey, setBookKey] = useState<string>("");
 
-    return <SearchContext.Provider value={{ query, setQuery, books, setBooks, bookKey, setBookKey }}>{children}</SearchContext.Provider>
+    /**
+     * Stores book cover because some books don't send it on its info.
+     */
+    const [bookCover, setBookCover] = useState<string>("");
+
+    return <SearchContext.Provider value={{ query, setQuery, books, setBooks, bookKey, setBookKey, bookCover, setBookCover }}>{children}</SearchContext.Provider>
 }

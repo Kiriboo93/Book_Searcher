@@ -8,6 +8,7 @@ import Author from './pages/author/Author';
 import Years from './pages/years/Years';
 import { useContext } from 'react';
 import { SearchContext } from './context/SearchContext';
+import Book from './pages/book/Book';
 
 function App() {
   /**
@@ -44,6 +45,7 @@ function App() {
           <Route path="/genre" element={<Genre />}></Route>
           <Route path="/author" element={<Author />}></Route>
           <Route path="/years" element={<Years />}></Route>
+          <Route path="/bookinfo" element={<Book />}></Route>
         </Routes>
       </BrowserRouter>
       <footer>

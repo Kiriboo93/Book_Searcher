@@ -1,0 +1,36 @@
+.book-title {
+    font-size: 4rem;
+    justify-self: center;
+}
+
+.book-container {
+    width: 100%;
+}
+
+.book-div_row {
+    display: flex;
+    width: 100%;
+    padding: 75px 75px 10px 75px;
+    gap: 100px;
+}
+
+.book-cover-container {
+    width: 20%;
+    border-radius: 5px;
+}
+
+.book-cover {
+    border-radius: 10px;
+    width: 100%;
+    height: 500px;
+}
+
+.book-desc {
+    width: 50%;
+    font-size: 1.8rem;
+}
+
+.book-info-subtitle {
+    margin-top: 0;
+    font-size: 2.5rem;
+}
