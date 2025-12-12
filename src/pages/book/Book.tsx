@@ -17,7 +17,7 @@ function Book() {
 
     return (
         <div data-testid="book">
-            <h2 className="book-title">{bookInfo?.title}</h2>
+            <h2 className="book-title">{bookInfo?.title + (context.bookYear === 0 ? "" : " (" + context.bookYear + ")")}</h2>
             <div className="book-container">
                 <div className="book-div_row">
                     <div className="book-cover-container">
@@ -26,11 +26,10 @@ function Book() {
                     <div className="book-desc">
                         <h3 className="book-info-subtitle">Summary</h3>
                         {bookInfo && bookInfo.description ? <p>{typeof bookInfo?.description === "string" ? bookInfo?.description.split("--")[0] : bookInfo?.description.value.split("--")[0]}</p> : ""}
-                        {bookInfo && bookInfo.authors.length > 0 ? <Author authorKey={bookInfo?.authors[0].author.key} /> : ""}
                     </div>
                 </div>
                 <hr />
-                <div className="book-div_row"></div>
+                {bookInfo && bookInfo.authors.length > 0 ? <Author authorKey={bookInfo?.authors[0].author.key} /> : ""}
             </div>
         </div>
     )

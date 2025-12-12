@@ -11,7 +11,9 @@ const searchContextDefaultValue: SearchContextTypes = {
     bookKey: "",
     setBookKey: () => { },
     bookCover: "",
-    setBookCover: () => { }
+    setBookCover: () => { },
+    bookYear: 0,
+    setBookYear: () => { }
 }
 
 /**
@@ -43,5 +45,10 @@ export const SearchContextProvider: React.FC<Props> = ({ children }) => {
      */
     const [bookCover, setBookCover] = useState<string>("");
 
-    return <SearchContext.Provider value={{ query, setQuery, books, setBooks, bookKey, setBookKey, bookCover, setBookCover }}>{children}</SearchContext.Provider>
+    /**
+     * Stores book publish year because some books don't send it on its info.
+     */
+    const [bookYear, setBookYear] = useState<number>(0);
+
+    return <SearchContext.Provider value={{ query, setQuery, books, setBooks, bookKey, setBookKey, bookCover, setBookCover, bookYear, setBookYear }}>{children}</SearchContext.Provider>
 }

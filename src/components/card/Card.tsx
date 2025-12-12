@@ -36,6 +36,7 @@ function Card({ book }: { book: Book }) {
     const saveBookKey = () => {
         context.setBookKey(book.key);
         context.setBookCover(book.cover_i);
+        context.setBookYear(book.first_publish_year);
     }
 
     return (

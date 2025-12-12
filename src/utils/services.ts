@@ -12,8 +12,8 @@ export async function getBooks(query: string) {
     return res.json();
 }
 
-/* Petition to get book info. */
-export async function getBookInfo(query: string) {
+/* Petition to get book and author info. */
+export async function getBookAuthorInfo(query: string) {
     const res = await fetch("https://openlibrary.org" + query + ".json", {
         method: "GET"
     });

@@ -11,7 +11,9 @@ export interface SearchContextTypes {
     bookKey: string,
     setBookKey: React.Dispatch<React.SetStateAction<string>>,
     bookCover: string,
-    setBookCover: React.Dispatch<React.SetStateAction<string>>
+    setBookCover: React.Dispatch<React.SetStateAction<string>>,
+    bookYear: number,
+    setBookYear: React.Dispatch<React.SetStateAction<number>>
 }
 
 /**
@@ -62,4 +64,12 @@ interface ObjectKey {
 interface DescriptionObject {
     value: string,
     type: string
+}
+
+/**
+ * Interface for author info.
+ */
+export interface AuthorInfo {
+    name: string,
+    bio: string | DescriptionObject
 }
