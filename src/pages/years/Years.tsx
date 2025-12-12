@@ -1,4 +1,4 @@
-import "../../css/years.css";
+import "../../css/pages/years.css";
 import { SearchContext } from "../../context/SearchContext";
 import SearchInput from "../../components/searchinput/SearchInput";
 import CardContainer from "../../components/card/CardContainer";

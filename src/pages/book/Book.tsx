@@ -1,7 +1,8 @@
-import "../../css/book.css";
+import "../../css/pages/book.css";
 import { useContext } from "react";
 import { SearchContext } from "../../context/SearchContext";
 import { useFetchBookInfo } from "../../utils/hooks";
+import Author from "../../components/author/Author";
 
 function Book() {
     /**
@@ -24,9 +25,8 @@ function Book() {
                     </div>
                     <div className="book-desc">
                         <h3 className="book-info-subtitle">Summary</h3>
-                        <p>{typeof bookInfo?.description === "string" ? bookInfo?.description : bookInfo?.description.value}</p>
-                        <h3 className="book-info-subtitle">Author</h3>
-                        <div>{bookInfo?.authors[0].author.key}</div>
+                        {bookInfo && bookInfo.description ? <p>{typeof bookInfo?.description === "string" ? bookInfo?.description.split("--")[0] : bookInfo?.description.value.split("--")[0]}</p> : ""}
+                        {bookInfo && bookInfo.authors.length > 0 ? <Author authorKey={bookInfo?.authors[0].author.key} /> : ""}
                     </div>
                 </div>
                 <hr />

@@ -1,4 +1,4 @@
-import "../../css/card.css";
+import "../../css/components/card.css";
 import { Book } from "../../types/types";
 import { shortenString, removeRepeatedStrings } from "../../utils/tools";
 import { Link } from 'react-router';

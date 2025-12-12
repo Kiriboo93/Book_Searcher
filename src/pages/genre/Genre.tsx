@@ -1,4 +1,4 @@
-import "../../css/genre.css";
+import "../../css/pages/genre.css";
 import { SearchContext } from "../../context/SearchContext";
 import SearchInput from "../../components/searchinput/SearchInput";
 import CardContainer from "../../components/card/CardContainer";
