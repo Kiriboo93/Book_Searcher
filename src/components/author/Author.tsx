@@ -17,11 +17,11 @@ function Author({ authorKey }: { authorKey: string }) {
             <h3 className="author-title">About the author</h3>
             <div className="author-row">
                 <div>
-                    <img className="author-img" src={"https://covers.openlibrary.org/a/olid/" + imageKey + "-M.jpg"} alt={"Author image."} />
+                    <img className="author-img" data-testid="author-image" src={"https://covers.openlibrary.org/a/olid/" + imageKey + "-M.jpg"} alt={"Author image."} />
                 </div>
                 <div className="author-info-container">
-                    <p className="author-name">{authorInfo?.name}</p>
-                    {authorInfo && authorInfo.bio ? <div>{typeof authorInfo?.bio === "string" ? authorInfo?.bio : authorInfo?.bio.value}</div> : ""}
+                    <p className="author-name" data-testid="author-name">{authorInfo?.name}</p>
+                    {authorInfo && authorInfo.bio ? <div data-testid="author-bio">{typeof authorInfo?.bio === "string" ? authorInfo?.bio : authorInfo?.bio.value}</div> : ""}
                 </div>
             </div>
         </div>
