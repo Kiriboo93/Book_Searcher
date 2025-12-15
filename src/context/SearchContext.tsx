@@ -7,7 +7,13 @@ const searchContextDefaultValue: SearchContextTypes = {
     query: "",
     setQuery: () => { },
     books: [],
-    setBooks: () => { }
+    setBooks: () => { },
+    bookKey: "",
+    setBookKey: () => { },
+    bookCover: "",
+    setBookCover: () => { },
+    bookYear: 0,
+    setBookYear: () => { }
 }
 
 /**
@@ -23,10 +29,26 @@ export const SearchContextProvider: React.FC<Props> = ({ children }) => {
      * Stores query from input to search books.
      */
     const [query, setQuery] = useState<string>("");
+
     /**
      * Stores the books seached through the query.
      */
     const [books, setBooks] = useState<Book[]>([]);
 
-    return <SearchContext.Provider value={{ query, setQuery, books, setBooks }}>{children}</SearchContext.Provider>
+    /**
+     * Stores query from input to search books.
+     */
+    const [bookKey, setBookKey] = useState<string>("");
+
+    /**
+     * Stores book cover because some books don't send it on its info.
+     */
+    const [bookCover, setBookCover] = useState<string>("");
+
+    /**
+     * Stores book publish year because some books don't send it on its info.
+     */
+    const [bookYear, setBookYear] = useState<number>(0);
+
+    return <SearchContext.Provider value={{ query, setQuery, books, setBooks, bookKey, setBookKey, bookCover, setBookCover, bookYear, setBookYear }}>{children}</SearchContext.Provider>
 }

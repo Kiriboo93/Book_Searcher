@@ -1,4 +1,4 @@
-import '../../css/searchInput.css';
+import '../../css/components/searchInput.css';
 import Icon from '@mdi/react';
 import { mdiMagnify } from '@mdi/js';
 import { useContext } from 'react';

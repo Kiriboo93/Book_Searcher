@@ -1,4 +1,4 @@
-import "../../css/cardContainer.css";
+import "../../css/components/cardContainer.css";
 import Card from "./Card";
 import { Book } from "../../types/types";
 

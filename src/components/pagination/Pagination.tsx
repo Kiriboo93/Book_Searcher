@@ -1,4 +1,4 @@
-import "../../css/pagination.css";
+import "../../css/components/pagination.css";
 
 function Pagination({ itemsPerPage, totalItems, setCurrentPage, currentPage }: { itemsPerPage: number, totalItems: number, setCurrentPage: CallableFunction, currentPage: number }) {
     /**

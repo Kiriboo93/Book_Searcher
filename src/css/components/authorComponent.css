@@ -1,0 +1,24 @@
+.author-container {
+    margin: 40px 75px;
+    font-size: 1.8rem;
+}
+
+.author-row {
+    display: flex;
+    gap: 20px;
+}
+
+.author-title {
+    font-size: 2.5rem;
+}
+
+.author-img {
+    height: 155px;
+    border-radius: 20%;
+    border: solid 2px var(--important-color);
+}
+
+.author-name {
+    margin-top: 0;
+    font-weight: 500;
+}
